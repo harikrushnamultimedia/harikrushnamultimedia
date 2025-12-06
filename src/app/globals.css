@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e9414d;
+  border-radius: 5px;
+}
+.btn {
+  @apply inline-block px-7 py-3 m-2 text-sm md:text-xl font-bold uppercase text-white bg-gradient-to-br to-[#f74450] from-[#E7414D] rounded-full shadow-md transition-transform ease-in-out cursor-pointer duration-500;
+}
+
+.btn:hover {
+  @apply transform -translate-y-1;
+}
+
+.btn:active {
+  @apply transform translate-y-0 bg-gradient-to-br from-red-700 to-red-400;
+}
+
+.btn::before,
+.btn::after {
+  @apply absolute w-0 h-0;
+}
+
+.btn::before {
+  @apply top-0 left-0 border-white rounded-full;
+}
+
+.btn::after {
+  @apply bottom-0 right-0 border-white rounded-full;
+}
+
+
